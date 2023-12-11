@@ -42,8 +42,11 @@ app.use(getlink);
     res.sendFile(__dirname + "/index.html");
   });
 
+  app.use(express.static('public'));
+
   app.post("/check", (req, res) => {
-    res.sendFile(__dirname + "/qr.html");
+    res.sendFile(__dirname+"/qr.html");
+    //res.render("index.ejs");
     //res.send(`<img src="/back-end/QR code generator/index.html" alt="">`);
     //res.sendFile(__dirname + "/URL.txt");
     //res.sendFile(__dirname + "/simple.svg");
